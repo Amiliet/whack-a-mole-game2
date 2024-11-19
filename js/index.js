@@ -11,9 +11,9 @@ function changeTimeValue(){
     if(diff == 'high'){
         document.getElementById("time").value = 30;
     }else if(diff == 'normal'){
-        document.getElementById("time").value = 30;
+        document.getElementById("time").value = 40;
     }else{
-        document.getElementById("time").value = 30;
+        document.getElementById("time").value = 60;
     };
 }
 
@@ -29,10 +29,10 @@ function showMouse(){
         time = 30;
         timeVal = 500;
     }else if(diff == 'normal'){
-        time = 30;
+        time = 40;
         timeVal = 750;
     }else{
-        time = 30;
+        time = 60;
         timeVal = 1000;
     }
     //开始游戏之后禁用开始游戏和选择难度
