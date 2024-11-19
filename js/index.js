@@ -1,4 +1,5 @@
-var startGame;//计时器
+var startGame;//地鼠计时器
+var countdown;//倒计时
 var score = 0;//总分
 var time;//倒计时
 var timeVal;//时间间隔
@@ -38,6 +39,24 @@ function showMouse(){
     document.getElementById("start").disabled = true;
     document.getElementById("diffculty").disabled = true;
 
+    // 开始倒计时
+    countdown = setInterval(function () {
+        time = time - 1; // 倒计时减一
+        document.getElementById("time").value = time;
+
+        if (time <= 0) {
+            clearInterval(countdown); // 停止倒计时
+            window.clearInterval(startGame); // 停止地鼠移动
+            document.getElementById("score").value = 0;
+            changeTimeValue();
+            alert('Game End! Your score is ' + score);
+            // 游戏结束之后重新启用开始游戏和选择难度
+            document.getElementById("start").disabled = false;
+            document.getElementById("diffculty").disabled = false;
+            return false;
+        }
+    }, 1000); // 每秒更新一次倒计时
+
     startGame = window.setInterval(function(){
         //清空所有表格里的img
         var itemArr = document.getElementsByTagName('td');
@@ -49,19 +68,6 @@ function showMouse(){
         var mouse = parseInt(Math.random()*25+1);
         var index = 'item_'+mouse;
 
-        time = time - 1;
-        document.getElementById("time").value = time;
-        if(time <= 0){
-            document.getElementById("score").value = 0;
-            changeTimeValue();
-            window.clearInterval(startGame); 
-            alert('Game End! Your score is '+score);
-            //游戏结束之后重新启用开始游戏和选择难度
-            document.getElementById("start").disabled = false;
-            document.getElementById("diffculty").disabled = false;
-            return false;
-        }
-
         //操作dom
         document.getElementById(index).style.backgroundColor = '#ffffff';
         document.getElementById(index).innerHTML = '<img src="./image/mouse.jpg" height="50px;" width="50px;">';
@@ -71,6 +77,7 @@ function showMouse(){
 function stop(){
     var itemArr = document.getElementsByTagName('td');
      window.clearInterval(startGame); 
+     clearInterval(countdown);
      for (var i = 0; i < itemArr.length; i++) {
             itemArr[i].style.backgroundColor = '#FF5500';
             itemArr[i].innerHTML = '';
