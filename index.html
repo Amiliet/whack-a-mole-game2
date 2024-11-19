@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Groundhog</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="input_container">
+        <input type="button" name="" id="start" value="Start Game" class="btn" onclick="showMouse()">
+        <input type="button" name="" id="end" value="End Game" class="btn" onclick="stop()">
+    </div>
+    <div class="input_container">
+        <span>Score:</span><input class="input_value" type="text" name="" id="score" value="0" readonly="readonly">
+        <span>Time:</span><input class="input_value" type="text" name="" id="time" value="60" readonly="readonly">
+        <span>Speed</span>
+        <select id="diffculty" class="diffculty" onchange="changeTimeValue();">
+            <option value="high">Diffculty</option>
+            <option value="normal" selected="selected">Normal</option>
+            <option value="low">Simple</option>
+        </select>
+    </div>
+    <table>
+        <tr>
+            <td id="item_1" class="item" onclick="bump('1')"></td>
+            <td id="item_2" class="item" onclick="bump('2')"></td>
+            <td id="item_3" class="item" onclick="bump('3')"></td>
+            <td id="item_4" class="item" onclick="bump('4')"></td>
+            <td id="item_5" class="item" onclick="bump('5')"></td>
+        </tr>
+        <tr>
+            <td id="item_6" class="item" onclick="bump('6')"></td>
+            <td id="item_7" class="item" onclick="bump('7')"></td>
+            <td id="item_8" class="item" onclick="bump('8')"></td>
+            <td id="item_9" class="item" onclick="bump('9')"></td>
+            <td id="item_10" class="item" onclick="bump('10')"></td>
+        </tr>
+        <tr>
+            <td id="item_11" class="item" onclick="bump('11')"></td>
+            <td id="item_12" class="item" onclick="bump('12')"></td>
+            <td id="item_13" class="item" onclick="bump('13')"></td>
+            <td id="item_14" class="item" onclick="bump('14')"></td>
+            <td id="item_15" class="item" onclick="bump('15')"></td>
+        </tr>
+        <tr>
+            <td id="item_16" class="item" onclick="bump('16')"></td>
+            <td id="item_17" class="item" onclick="bump('17')"></td>
+            <td id="item_18" class="item" onclick="bump('18')"></td>
+            <td id="item_19" class="item" onclick="bump('19')"></td>
+            <td id="item_20" class="item" onclick="bump('20')"></td>
+        </tr>
+        <tr>
+            <td id="item_21" class="item" onclick="bump('21')"></td>
+            <td id="item_22" class="item" onclick="bump('22')"></td>
+            <td id="item_23" class="item" onclick="bump('23')"></td>
+            <td id="item_24" class="item" onclick="bump('24')"></td>
+            <td id="item_25" class="item" onclick="bump('25')"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
