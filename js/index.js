@@ -9,7 +9,7 @@ var curr_td = '';
 function changeTimeValue(){
     var diff = document.getElementById("diffculty").value;
     if(diff == 'high'){
-        document.getElementById("time").value = 30;
+        document.getElementById("time").value = 15;
     }else if(diff == 'normal'){
         document.getElementById("time").value = 40;
     }else{
@@ -26,8 +26,8 @@ function showMouse(){
     document.getElementById("score").value = score;
 
     if(diff == 'high'){
-        time = 30;
-        timeVal = 500;
+        time = 15;
+        timeVal = 250;
     }else if(diff == 'normal'){
         time = 40;
         timeVal = 750;
