@@ -25,7 +25,7 @@
             <option value="low">Simple</option>
         </select>
     </div>
-    <table>
+    <table >
         <tr>
             <td id="item_1" class="item" onclick="bump('1')"></td>
             <td id="item_2" class="item" onclick="bump('2')"></td>
@@ -62,6 +62,23 @@
             <td id="item_25" class="item" onclick="bump('25')"></td>
         </tr>
     </table>
+    
+    <div class="statistics-container">
+        <h3>Game Results</h3>
+        <table id="statistics-table">
+            <thead>
+                <tr>
+                    <th>Difficulty</th>
+                    <th>Score</th>
+                    <th>Misses</th>
+                    <th>Miss Rate (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 动态插入行 -->
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>
